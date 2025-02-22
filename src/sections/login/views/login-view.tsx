@@ -1,19 +1,12 @@
 'use client';
 
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
 import CssBaseline from '@mui/material/CssBaseline';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import Link from '@mui/material/Link';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import {styled} from '@mui/material/styles';
+import LoginField from '@/components/login/LoginField';
 
 const Card = styled(MuiCard)(({theme}) => ({
     display: 'flex',
@@ -71,72 +64,7 @@ export default function SignIn() {
                     >
                         Sign in
                     </Typography>
-                    <Box
-                        component="form"
-                        onSubmit={() => {
-                        }}
-                        noValidate
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '100%',
-                            gap: 2,
-                        }}
-                    >
-                        <FormControl>
-                            <FormLabel htmlFor="email">Email</FormLabel>
-                            <TextField
-                                type="email"
-                                name="email"
-                                placeholder="your@email.com"
-                                autoComplete="email"
-                                autoFocus
-                                required
-                                fullWidth
-                                variant="outlined"
-                                size="small"
-                                sx={{mt: 1}}
-                            />
-                        </FormControl>
-                        <FormControl>
-                            <FormLabel htmlFor="password">Password</FormLabel>
-                            <TextField
-                                name="password"
-                                placeholder="••••••"
-                                type="password"
-                                id="password"
-                                autoComplete="current-password"
-                                required
-                                fullWidth
-                                variant="outlined"
-                                size="small"
-                                sx={{mt: 1}}
-                            />
-                        </FormControl>
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary"/>}
-                            label="Remember me"
-                        />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            onClick={() => {
-                            }}
-                        >
-                            Sign in
-                        </Button>
-                        <Link
-                            component="button"
-                            type="button"
-                            onClick={() => {
-                            }}
-                            variant="body2"
-                            sx={{alignSelf: 'center'}}
-                        >
-                            Forgot your password?
-                        </Link>
-                    </Box>
+                    <LoginField/>
                 </Card>
             </SignInContainer>
         </>

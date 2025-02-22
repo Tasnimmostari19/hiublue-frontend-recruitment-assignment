@@ -1,10 +1,19 @@
-import DashboardView from "@/sections/dashboard/views/dashboard-view";
+"use client";
+import { redirect } from "next/navigation";
+import { useEffect } from "react";
 
-export const metadata = {
-    title: 'Dashbord',
-};
 
 
 export default function Page() {
-    return <DashboardView/>;
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      redirect("/login");
+    } else {
+      redirect("/dashboard");
+    }
+  }, []);
+
+  return null;
+ 
 }

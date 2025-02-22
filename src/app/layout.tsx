@@ -5,6 +5,7 @@ import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import ThemeProvider from "@/theme/index";
 import Header from './header';
 import SideNav from '@/components/UI/side-nav';
+import { AuthProvider } from '@/components/authentication/AuthProvider';
 
 export default function RootLayout(props: { children: React.ReactNode }) {
     return (
@@ -15,12 +16,11 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <ThemeProvider>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>
-                <Header/>
-                <div style={{display:'flex'}}>
-                    <SideNav/>
+                <AuthProvider>
+               
                   {props.children}  
-                </div>
-                
+              
+                </AuthProvider>
             </ThemeProvider>
         </AppRouterCacheProvider>
         </body>
